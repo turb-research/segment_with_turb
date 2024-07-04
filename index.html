@@ -156,12 +156,27 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Dataset introduction</h2>
+        <h2 class="title is-3">Paper abstract</h2>
         <div class="content has-text-justified">
           <p>
-            URG-T consists of 20 videos, all collected outdoors in hot weather using long focal length settings. All videos contain instances of moving objects, such as vehicles, aircraft, and pedestrians. We manually annotate the video to provide per-frame ground truth masks for segmenting moving objects. 
-            Specifically, we use a Nikon Coolpix P1000 to capture the videos. The camera has an adjustable focal length of up to 539mm (125X optical zoom), which is equivalent to 3000mm focal length in 35mm sensor format. We record videos with a resolution of 1920X1080. In total, our dataset has 20 videos with 934 frames. We annotate moving objects in each video frame using the Computer Vision Annotation Tool (CVAT). 
-            Our dataset is the first of its kind to provide a ground truth moving object segmentation mask in the context of long-range turbulent video. URG-T is specifically designed for motion segmentation tasks, but it can be used for other tasks as well (e.g., turbulent video restoration).
+            Moving object segmentation in the presence of atmospheric
+turbulence is highly challenging due to turbulence-induced irregular and
+time-varying distortions. In this paper, we present an unsupervised approach for segmenting moving objects in videos downgraded by atmospheric turbulence. Our key approach is to adopt a detect-then-grow
+scheme: we first identify a small set of pixels that belong to moving
+objects with high confidence, then gradually grow a foreground mask
+from those seeds that segment all moving objects in the scene. In order
+to disentangle different types of motions, we check the rigid geometric
+consistency among video frames. We then use the Sampson distance to
+initialize the seedling pixels. After growing per-frame foreground masks,
+we use spatial grouping loss and temporal consistency loss to further re-
+fine the masks in order to ensure their spatio-temporal consistency. Our
+method is unsupervised and does not require training on labeled data.
+For validation, we collect and release the first real-captured long-range
+turbulent video dataset with ground truth masks for moving objects.
+We evaluate our method both qualitatively and quantitatively on our
+real dataset. Results show that our method achieves good accuracy in
+segmenting moving objects and is robust for long-range videos with various turbulence strengths.
+
           </p>
         </div>
       </div>
