@@ -193,26 +193,14 @@ segmenting moving objects and is robust for long-range videos with various turbu
       <div class="column is-four-fifths">
         <h2 class="title is-3">Architecture</h2>
         <div class="content has-text-justified">
-          <img src="static/images/00013.png" alt="MY ALT TEXT"/>
+          <img src="static/images/pipe.jpg" alt="MY ALT TEXT"/>
 
           <p>
-            Moving object segmentation in the presence of atmospheric
-turbulence is highly challenging due to turbulence-induced irregular and
-time-varying distortions. In this paper, we present an unsupervised approach for segmenting moving objects in videos downgraded by atmospheric turbulence. Our key approach is to adopt a detect-then-grow
-scheme: we first identify a small set of pixels that belong to moving
-objects with high confidence, then gradually grow a foreground mask
-from those seeds that segment all moving objects in the scene. In order
-to disentangle different types of motions, we check the rigid geometric
-consistency among video frames. We then use the Sampson distance to
-initialize the seedling pixels. After growing per-frame foreground masks,
-we use spatial grouping loss and temporal consistency loss to further re-
-fine the masks in order to ensure their spatio-temporal consistency. Our
-method is unsupervised and does not require training on labeled data.
-For validation, we collect and release the first real-captured long-range
-turbulent video dataset with ground truth masks for moving objects.
-We evaluate our method both qualitatively and quantitatively on our
-real dataset. Results show that our method achieves good accuracy in
-segmenting moving objects and is robust for long-range videos with various turbulence strengths.
+            We first
+generate motion feature maps by applying a geometry-based consistency check on op-
+tical flows. We then adopt a region-growing scheme to generate coarse segmentation
+masks. Finally, we refine the masks using cross entropy-based consistency losses to en-
+force their spatio-temporal consistency
 
           </p>
         </div>
