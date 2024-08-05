@@ -186,21 +186,22 @@ segmenting moving objects and is robust for long-range videos with various turbu
 <!-- End paper abstract -->
 
 
-<!-- Paper abstract -->
+<!-- pipeline -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Architecture</h2>
+        <h2 class="title is-3">Pipeline</h2>
         <div class="content has-text-justified">
           <img src="static/images/pipe.jpg" alt="MY ALT TEXT"/>
 
           <p>
-            We first
-generate motion feature maps by applying a geometry-based consistency check on op-
-tical flows. We then adopt a region-growing scheme to generate coarse segmentation
-masks. Finally, we refine the masks using cross entropy-based consistency losses to en-
-force their spatio-temporal consistency
+            Our method starts with calculating bidirectional optical flow. To disentangle
+actual object motion from turbulent motion, we use a novel epipolar geometry-based consistency check to generate motion feature maps that only preserve
+object motions. We then adopt a region-growing scheme that generates per-object motion segmentation masks from a small set of seed pixels. Finally, we
+develop a U-Net trained by our proposed bidirectional consistency losses
+and a pixel grouping function to improve the spatio-temporal consistency of
+estimated motion segmentation masks
 
           </p>
         </div>
@@ -211,6 +212,34 @@ force their spatio-temporal consistency
 <!-- End paper abstract -->
 
 
+
+<!-- epi -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motion disentanglement</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/epi.jpg" alt="MY ALT TEXT"/>
+
+          <p>
+            We first tackle the problem of motion disentanglement, which is a major challenge posed by turbulence perturbation in rigid motion analysis. Our key idea
+is to check on the rigid geometric consistency among video frames: pixels on
+moving objects do not obey the geometric consistency constraint posed by the
+image formation model. Specifcially, we use the Sampson distance, which measures geometric consistency with a given epipolar geometry, to improve the
+spatial-temporal consistency among video frames. We first average the optical flow between adjacent frames to stabilize the direct estimations, since
+they are susceptible to turbulence perturbation. We then calculate the Sampson distance using fundamental matrices estimated from the averaged optical
+flow. Next, we merge the Sampson distance maps as the motion feature maps
+{Mt|t = 1, 2, . . . , T }. We use the motion feature map values as indicators of how
+likely a pixel has rigid motion (the higher the value, the higher the likelihood).
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
 
 
 
