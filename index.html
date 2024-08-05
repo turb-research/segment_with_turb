@@ -168,8 +168,7 @@ from those seeds that segment all moving objects in the scene. In order
 to disentangle different types of motions, we check the rigid geometric
 consistency among video frames. We then use the Sampson distance to
 initialize the seedling pixels. After growing per-frame foreground masks,
-we use spatial grouping loss and temporal consistency loss to further re-
-fine the masks in order to ensure their spatio-temporal consistency. Our
+we use spatial grouping loss and temporal consistency loss to further refine the masks in order to ensure their spatio-temporal consistency. Our
 method is unsupervised and does not require training on labeled data.
 For validation, we collect and release the first real-captured long-range
 turbulent video dataset with ground truth masks for moving objects.
@@ -252,14 +251,11 @@ likely a pixel has rigid motion (the higher the value, the higher the likelihood
           <img src="static/images/score.png" alt="MY ALT TEXT"/>
 
           <p>
-            We organize videos into two sets, “normal turb.” and “severe turb.”, according to their exhibited turbu-
-lence strength. Our method significantly outperforms these state-of-the-art on
+            We organize videos into two sets, “normal turb.” and “severe turb.”, according to their exhibited turbulence strength. Our method significantly outperforms these state-of-the-art on
 motion segmentation accuracy under various turbulence strengths. In normal
 cases, some can still achieve decent performance, whereas our method scores
-much higher in all metrics. Compared to TMO, whose overall score is the high-
-est among the three state-of-the-art, our accuracy is increasing by 60.1% in J
-and 34.9% in F. In severe cases, the performance of all state-of-the-art signifi-
-cantly downgrades, with all J values lower than 0.25 and F lower than 0.35. In
+much higher in all metrics. Compared to TMO, whose overall score is the highest among the three state-of-the-art, our accuracy is increasing by 60.1% in J
+and 34.9% in F. In severe cases, the performance of all state-of-the-art significantly downgrades, with all J values lower than 0.25 and F lower than 0.35. In
 contrast, our method is relatively robust to strong turbulence.
 
           </p>
